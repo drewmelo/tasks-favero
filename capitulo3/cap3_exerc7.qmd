@@ -6,6 +6,15 @@ format:
   html: default
 filters:
   - ../_extensions/coatless-quarto/colab/colab.lua
+magic-commands:
+  r: "%%R"              # Custom R magic command
+setup-cells:
+  r:
+    language: "python"    # Language assumed for the setup cell
+    code: |
+      # Custom R setup
+      !pip install rpy2
+      %load_ext rpy2.ipython
 ---
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc7.ipynb)
@@ -18,10 +27,8 @@ O arquivo 'Motivação_Empresas.csv' apresenta um banco de dados com as variáve
 #| include: true    # garante que vira célula no .ipynb
 #| message: false   # (opcional) esconde mensagens de carregamento
 # Importação dos pacotes necessários
-library(tidyverse)
-library(DescTools)
+library(tidyverse); library(DescTools)
 ```
-
 
 ```{r}
 url <- "https://raw.githubusercontent.com/caio-azevedo/estatistica_aplicada/refs/heads/main/Semana%201/Motiva%C3%A7%C3%A3o_Empresas.csv"
@@ -137,7 +144,7 @@ chi2
 
 i- Calcule os coeficientes Phi, de contingência e V de Cramer, confirmando se há ou não associação entre as variáveis.
 ```{r}
-Phi(tab_abs[1:5,1:5])
+DescTools::Phi(tab_abs[1:5,1:5])
 ```
 
 $Phi = \sqrt{\frac{\chi^2}{n}}$
@@ -151,7 +158,7 @@ sqrt(chi2 / n)
 
 ```{r}
 # Coeficiente de contingência
-ContCoef(tab_abs[1:5,1:5])
+DescTools::ContCoef(tab_abs[1:5,1:5])
 ```
 
 $C = \sqrt{\frac{\chi^2}{\chi^2 + n}}$
@@ -161,7 +168,7 @@ sqrt(chi2 / (n + chi2)) |> round(2)
 
 ```{r}
 # Coeficiente V de Cramer
-CramerV(tab_abs[1:5,1:5])
+DescTools::CramerV(tab_abs[1:5,1:5])
 ```
 
 $V = \sqrt{\frac{\chi^2}{n(q-1)}}$
