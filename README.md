@@ -4,7 +4,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/drewmelo/tasks-favero)
 ![Repo Size](https://img.shields.io/github/repo-size/drewmelo/tasks-favero)
 
-Este repositório reúne as resoluções dos exercícios do livro **“Manual de Análise de Dados”** (Fávero *et al.*) utilizando **R** e, quando necessário, integração com **Quarto** para geração de notebooks interativos.
+Este repositório reúne as resoluções dos exercícios do livro **“Manual de Análise de Dados”** (Fávero *et al.*) utilizando **R** e, quando necessário, Jupyter Notebook para geração de notebooks interativos.
 
 ## Objetivo
 - Criar um repositório organizado para consulta e estudo.
