@@ -1,0 +1,176 @@
+---
+title: "Exercício 3 (Capítulo 3) no R"
+author: "André Melo"
+format:
+  ipynb: default
+  html:
+    number-sections: false
+    code-links:
+      - text: "Open in Colab"
+        href: "https://colab.research.google.com/github/drewmelo/tasks-favero/blob/main/cap3_exerc7.ipynb"
+        icon: "laptop"
+colab:
+  gh-user: "drewmelo"
+  gh-repo: "tasks-favero"
+  gh-branch: "main"
+filters:
+  - ../_extensions/coatless-quarto/colab/colab.lua
+---
+
+O arquivo 'Motivação_Empresas.csv' apresenta um banco de dados com as variáveis Empresa e Grau de Motivação, obtidas por meio de uma pesquisa realizada com 250 funcionários (50 respondentes para cada umas das 5 empresas pesquisadas), com o intuito de avaliar o grau de motivação dos funcionários em relação a empresas, consideradas de grande porte. Dessa forma, pede-se:
+
+```{r}
+# Importação dos pacotes necessários
+library(tidyverse)
+library(DescTools)
+```
+
+
+```{r}
+url <- "https://raw.githubusercontent.com/caio-azevedo/estatistica_aplicada/refs/heads/main/Semana%201/Motiva%C3%A7%C3%A3o_Empresas.csv"
+df <- read_csv(url, show_col_types = FALSE)
+# Visualização da base de dados 'Motivação Empresas'
+print(df)
+```
+
+a- Construa as tabelas de distribuição conjunta de frequências para as variáveis 'faixa_etaria' e 'inadimplencia' (frequências absolutas, frequências relativas em relação ao total geral, frequências relativas em relação ao total de cada linha, frequências relativas em relação ao total de cada coluna e frequências esperadas).
+
+```{r}
+tab_abs <- with(df, table(empresa, motivacao)) |> addmargins()
+
+# Renomear 'Sum' (padrão) para 'Total'
+rownames(tab_abs)[nrow(tab_abs)] <- "Total"
+colnames(tab_abs)[ncol(tab_abs)] <- "Total"
+
+tab_abs
+```
+
+
+```{r}
+tab_prop_all <- addmargins(prop.table(tab_abs[1:5, 1:5]))
+
+# Renomear 'Sum' (padrão) para 'Total'
+rownames(tab_prop_all)[nrow(tab_prop_all)] <- "Total"
+colnames(tab_prop_all)[ncol(tab_prop_all)] <- "Total"
+
+tab_prop_all
+```
+
+
+```{r}
+# Linha "Total" = proporção global por coluna
+Total <- colSums(tab_abs[1:5,1:5]) / sum(tab_abs[1:5,1:5])
+
+# Proporção por linha e junção com objeto Total
+tab_prop_row <- prop.table(tab_abs[1:5,1:5], margin = 1) |> rbind(Total) |> round(3)
+
+tab_prop_row
+```
+
+
+```{r}
+# Coluna "Total" = proporção global por linha
+Total <- rowSums(tab_abs[1:5,1:5]) / sum(tab_abs[1:5,1:5])
+
+# Proporção por coluna e junção com objeto Total
+tab_prop_col <- prop.table(tab_abs[1:5,1:5], margin = 2) |> cbind(Total) |> round(3)
+
+tab_prop_col
+```
+
+
+```{r}
+# Teste qui-quadrado e esperados
+chi <- chisq.test(tab_abs[1:5,1:5])
+
+chi
+```
+
+
+```{r}
+tab_esp <- chi$expected |> addmargins()
+
+rownames(tab_esp)[nrow(tab_esp)] <- "Total"
+colnames(tab_esp)[ncol(tab_esp)] <- "Total"
+
+tab_esp
+```
+
+b- Calcule a porcentagem de respondentes muito desmotivados.
+```{r}
+cat("A porcentagem de respondentes muito desmotivados é de",
+    round(100 * tab_prop_all["Total","muito desmotivado"], 2), "%")
+```
+
+c- Calcule a porcentagem de respondentes da empresa A e que estão muito desmotivados.
+```{r}
+cat("A porcentagem de respondentes da empresa A e que estão muito desmotivados é de",
+    round(100 * tab_prop_all["A","muito desmotivado"], 2), "%")
+```
+
+d- Calcule a porcentagem de respondentes motivados na empresa D.
+```{r}
+cat("A porcentagem de respondentes motivados na empresa D é de",
+    round(100 * tab_prop_row["D","motivado"], 2), "%")
+```
+
+e- Calcule a porcentagem de respondentes pouco motivados na empresa C.
+```{r}
+cat("A porcentagem de respondentes pouco motivados na empresa C é de",
+    round(100 * tab_prop_row["C","pouco motivado"], 2), "%")
+```
+
+f- Determine, dentre os respondentes que estão muito motivados, a porcentagem daqueles que pertencem à empresa B.
+```{r}
+cat("Dentre os respondentes que estão muito motivados, a porcentagem daqueles que pertencem à empresa B é de",
+    round(100 * tab_prop_col["B","muito motivado"], 2), "%")
+```
+
+g- Verifique se há indícios de dependência entre as variáveis.
+```{r}
+tab_prop_row
+```
+
+h- Confirme o item anterior usando a estatística $\chi^2$
+```{r}
+chi2 <- as.numeric(chi$statistic)
+
+chi2
+```
+
+i- Calcule os coeficientes Phi, de contingência e V de Cramer, confirmando se há ou não associação entre as variáveis.
+```{r}
+Phi(tab_abs[1:5,1:5])
+```
+
+$Phi = \sqrt{\frac{\chi^2}{n}}$
+```{r}
+n <- nrow(df)
+
+# Coeficiente Phi
+sqrt(chi2 / n)
+```
+
+
+```{r}
+# Coeficiente de contingência
+ContCoef(tab_abs[1:5,1:5])
+```
+
+$C = \sqrt{\frac{\chi^2}{\chi^2 + n}}$
+```{r}
+sqrt(chi2 / (n + chi2)) |> round(2)
+```
+
+```{r}
+# Coeficiente V de Cramer
+CramerV(tab_abs[1:5,1:5])
+```
+
+$V = \sqrt{\frac{\chi^2}{n(q-1)}}$
+```{r}
+# (q-1)
+k <- min(nrow(tab_abs[1:5,1:5]), ncol(tab_abs[1:5,1:5])) - 1
+
+sqrt(chi2 / (n * k)) |> round(2)
+```
