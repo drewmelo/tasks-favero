@@ -4,15 +4,14 @@ author: "André Melo"
 format:
   ipynb: default
   html:
-    number-sections: false
     code-links:
       - text: "Open in Colab"
-        href: "https://colab.research.google.com/github/drewmelo/tasks-favero/blob/main/cap3_exerc7.ipynb"
+        href: "https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/cap3_exerc7.ipynb"
         icon: "laptop"
 colab:
   gh-user: "drewmelo"
   gh-repo: "tasks-favero"
-  gh-branch: "main"
+  gh-branch: "master"
 filters:
   - ../_extensions/coatless-quarto/colab/colab.lua
 ---
