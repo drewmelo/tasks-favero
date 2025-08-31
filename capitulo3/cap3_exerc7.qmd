@@ -3,18 +3,12 @@ title: "Exercício 3 (Capítulo 3) no R"
 author: "André Melo"
 format:
   ipynb: default
-  html:
-    code-links:
-      - text: "Open in Colab"
-        href: "https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/cap3_exerc7.ipynb"
-        icon: "laptop"
-colab:
-  gh-user: "drewmelo"
-  gh-repo: "tasks-favero"
-  gh-branch: "master"
+  html: default
 filters:
   - ../_extensions/coatless-quarto/colab/colab.lua
 ---
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc7.ipynb)
 
 O arquivo 'Motivação_Empresas.csv' apresenta um banco de dados com as variáveis Empresa e Grau de Motivação, obtidas por meio de uma pesquisa realizada com 250 funcionários (50 respondentes para cada umas das 5 empresas pesquisadas), com o intuito de avaliar o grau de motivação dos funcionários em relação a empresas, consideradas de grande porte. Dessa forma, pede-se:
 
