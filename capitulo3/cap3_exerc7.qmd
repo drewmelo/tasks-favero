@@ -1,5 +1,5 @@
 ---
-title: "Exercício 3 (Capítulo 3) no R"
+title: "Exercício 7 (Capítulo 3) no R"
 author: "André Melo"
 format:
   ipynb: default
@@ -13,6 +13,10 @@ filters:
 O arquivo 'Motivação_Empresas.csv' apresenta um banco de dados com as variáveis Empresa e Grau de Motivação, obtidas por meio de uma pesquisa realizada com 250 funcionários (50 respondentes para cada umas das 5 empresas pesquisadas), com o intuito de avaliar o grau de motivação dos funcionários em relação a empresas, consideradas de grande porte. Dessa forma, pede-se:
 
 ```{r}
+#| label: libs
+#| echo: true       # mostra o código
+#| include: true    # garante que vira célula no .ipynb
+#| message: false   # (opcional) esconde mensagens de carregamento
 # Importação dos pacotes necessários
 library(tidyverse)
 library(DescTools)
