@@ -21,7 +21,8 @@ Você pode abrir os notebooks diretamente no **Google Colab** para executar os c
 
 | Capítulo   | Exercício   | Link para Colab |
 |------------|-------------|-----------------|
-| Capítulo 3 | Exercício 7 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc7.ipynb) |
+| Capítulo 3 | Exercício 6 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc6.ipynb) |
+|            | Exercício 7 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc7.ipynb) |
 |            | Exercício 8 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc8.ipynb) |
 |            | Exercício 9 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc9.ipynb) |
 
