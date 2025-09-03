@@ -6,19 +6,33 @@
 
 Este repositório reúne as resoluções dos exercícios do livro **“Manual de Análise de Dados”** (Fávero *et al.*) utilizando **R** e, quando necessário, Jupyter Notebook para geração de notebooks interativos.
 
+---
+
 ## Objetivo
 - Criar um repositório organizado para consulta e estudo.
 - Facilitar o compartilhamento de soluções com colegas e interessados.
+
+---
 
 ## Estrutura do projeto
 
 Você pode abrir os notebooks diretamente no **Google Colab** para executar os códigos sem instalar nada localmente:
 
-| Capítulo | Exercício | Link para Colab |
-|----------|-----------|-----------------|
+| Capítulo   | Exercício   | Link para Colab |
+|------------|-------------|-----------------|
 | Capítulo 3 | Exercício 7 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc7.ipynb) |
-| Capítulo 3 | Exercício 8 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc8.ipynb) |
-| Capítulo 3 | Exercício 9 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc9.ipynb) |
+|            | Exercício 8 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc8.ipynb) |
+|            | Exercício 9 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/cap3_exerc9.ipynb) |
+
+### Arquivos extras
+
+Alguns arquivos extras também podem ser acessados diretamente:
+
+| Descrição                 | Link para Colab |
+|----------------------------|-----------------|
+| Análise Bivariada no R     | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/analise_bivariada_R.ipynb) |
+
+---
 
 ## Como usar localmente
 1. **Clone o repositório**
@@ -27,6 +41,8 @@ Você pode abrir os notebooks diretamente no **Google Colab** para executar os c
    cd tasks-favero
 ```
 
-# Referências
+---
+
+## Referências
 
 FÁVERO, Luiz Paulo; BELFIORE, Patrícia. *Manual de análise de dados: estatística e modelagem multivariada com Excel®, SPSS® e Stata®*. Elsevier Brasil, 2017.
