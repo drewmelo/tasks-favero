@@ -6,13 +6,14 @@
 
 Este repositório reúne as resoluções dos exercícios do livro **“Manual de Análise de Dados”** (Fávero *et al.*) utilizando **R** e, quando necessário, Jupyter Notebook para geração de notebooks interativos.
 
+Além deste projeto, você também pode acessar outro repositório com exercícios resolvidos do mesmo livro, disponível em:  
+🔗 [caio-azevedo/estatistica_aplicada](https://github.com/caio-azevedo/estatistica_aplicada/tree/main)
+
 ---
 
 ## Objetivo
 - Criar um repositório organizado para consulta e estudo.
 - Facilitar o compartilhamento de soluções com colegas e interessados.
-
----
 
 ## Estrutura do projeto
 
@@ -32,16 +33,12 @@ Alguns arquivos extras também podem ser acessados diretamente:
 |----------------------------|-----------------|
 | Análise Bivariada no R     | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drewmelo/tasks-favero/blob/master/capitulo3/analise_bivariada_R.ipynb) |
 
----
-
 ## Como usar localmente
 1. **Clone o repositório**
 ```bash
    git clone https://github.com/drewmelo/tasks-favero.git
    cd tasks-favero
 ```
-
----
 
 ## Referências
 
